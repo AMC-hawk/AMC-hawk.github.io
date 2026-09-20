@@ -1,0 +1,45 @@
+# amc-hawk.github.io
+
+Personal site for **Anmol Mishra** — Software Engineer, Distributed Data Platform @ HPE.
+
+Live at **https://amc-hawk.github.io**
+
+## Stack
+
+Hand-written HTML, CSS and JavaScript. No framework, no build step, no dependencies —
+push to `master` and GitHub Pages serves it.
+
+## Layout
+
+```
+index.html              the page
+assets/css/style.css    design system + all animation
+assets/js/bg.js         canvas "data flow" particle network
+assets/js/main.js       rendering, scroll reveals, filters, counters, cursor
+assets/img/             photos
+assets/docs/            résumé PDF
+data/research.js        your paper analyses (empty until you add them)
+data/projects.js        projects + tracked upstream repos
+data/experience.js      career timeline + open-source contributions
+```
+
+## Editing
+
+Content lives in `data/*.js` — plain arrays of objects. Add an entry there and it
+renders itself; filters rebuild automatically from the categories present.
+
+`data/research.js` is intentionally empty. Add your write-ups to that array and the
+Research section switches from its placeholder to a filterable list. Only link to
+publicly reachable papers — links into private repos 404 for visitors.
+
+To swap the résumé, replace `assets/docs/Anmol-Mishra-Resume.pdf` (keep the filename).
+
+To add gallery photos, drop `photo-2.jpg` … `photo-4.jpg` into `assets/img/` and replace
+the corresponding `<figure class="empty">` placeholders in `index.html`.
+
+## Local preview
+
+```sh
+python3 -m http.server 8777
+# → http://localhost:8777
+```
