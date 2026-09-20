@@ -14,7 +14,7 @@
   let nodes = [], packets = [];
   const mouse = { x: -9999, y: -9999, active: false };
 
-  const COLORS = ['255,79,56', '19,146,236', '73,68,64'];  // accent coral, blue, warm brown
+  const COLORS = ['255,54,33', '27,81,98', '90,111,119'];  // lava, deep blue, slate
   const LINK_DIST = 150;
   const MOUSE_R = 190;
 

@@ -115,9 +115,9 @@
       host.innerHTML = `
         <div class="res-empty">
           <p><b>Notes in progress.</b></p>
-          <p>I'm working through the literature on data quality for machine learning —
-             validation systems, error detection, label noise and LLM-driven cleaning —
-             and writing up my own analysis of each paper. Those write-ups will land here.</p>
+          <p>I'm working through the literature on data quality for machine learning:
+             validation systems, error detection, label noise and LLM-driven cleaning.
+             I write up my own analysis of each paper, and those write-ups will land here.</p>
         </div>`;
       return;
     }
