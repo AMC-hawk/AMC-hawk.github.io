@@ -236,6 +236,105 @@
       <div class="stat rv rv-d4"><div class="num"><span data-count="3" data-suffix="+">3+</span></div><div class="lbl">Yrs in production data</div></div>
       <div class="stat rv rv-d5"><div class="num"><span data-count="2">2</span></div><div class="lbl">Upstream OSS PRs</div></div>
     </div>
+
+    <div class="sec-head rv" style="margin-top:clamp(52px,7vw,84px)">
+      <div class="sec-num">01b / The Distributed Data Platform</div>
+      <h2 class="sec-title">Raw data in, decisions out</h2>
+      <p class="sec-sub">
+        The medallion lakehouse behind HPE&rsquo;s Distributed Data Platform, and the people on the other
+        end of it. Half the job is the pipeline. The other half is sitting with product, program and
+        customer success teams, and with technical and non-technical leaders, until we agree on what a number means.
+      </p>
+    </div>
+
+    <figure class="medal rv rv-d1" aria-label="HPE Distributed Data Platform: Postgres changes captured by Debezium into Amazon MSK, refined through bronze, silver and gold Iceberg layers, catalogued in DataHub, and served through Trino, Apache Superset and data science ML models to product managers, program managers, customer success managers and leaders">
+      <div class="m-flow">
+
+        <div class="m-src">
+          <div class="m-cap">Ingest</div>
+          <span class="m-chip">Postgres <i>source</i></span>
+          <span class="m-chip m-chip-down">Debezium <i>CDC</i></span>
+          <span class="m-chip m-chip-down">Amazon MSK <i>Kafka</i></span>
+        </div>
+
+        <div class="m-link"><span class="pkt"></span></div>
+
+        <div class="m-lake">
+          <div class="m-lake-cap"><span>Lakehouse</span> Iceberg on S3 · Spark on EKS</div>
+          <div class="m-layers">
+            <div class="m-layer bronze">
+              <div class="m-head"><span class="m-medal">B</span><div><b>Bronze</b><i>Raw, as it landed</i></div></div>
+              <ul>
+                <li>Every CDC change from MSK, append-only</li>
+                <li>Source schema kept, nothing dropped</li>
+                <li>Replayable for backfills</li>
+              </ul>
+              <div class="m-stack">Debezium · MSK</div>
+            </div>
+
+            <div class="m-gate"><span class="pkt" style="animation-delay:.6s"></span><em title="Quality gate"></em></div>
+
+            <div class="m-layer silver">
+              <div class="m-head"><span class="m-medal">S</span><div><b>Silver</b><i>Clean and conformed</i></div></div>
+              <ul>
+                <li>Deduped, typed, late data merged</li>
+                <li>Keys conformed across sources</li>
+                <li>SCD2 history where it matters</li>
+              </ul>
+              <div class="m-stack">Spark · Scala</div>
+            </div>
+
+            <div class="m-gate"><span class="pkt" style="animation-delay:1.2s"></span><em title="Quality gate"></em></div>
+
+            <div class="m-layer gold">
+              <div class="m-head"><span class="m-medal">G</span><div><b>Gold</b><i>Ready for decisions</i></div></div>
+              <ul>
+                <li>Business marts at a stated grain</li>
+                <li>Each metric defined once, with an owner</li>
+                <li>15+ BI models served through Trino</li>
+              </ul>
+              <div class="m-stack">Trino</div>
+            </div>
+          </div>
+          <div class="m-catalog">
+            <span class="m-cat-ic" data-icon="book"></span>
+            <div>
+              <b>Data Catalog on DataHub</b>
+              <p>Every bronze, silver and gold table is registered with its schema and owner, and lineage runs from the MSK topic to the Superset chart.</p>
+            </div>
+            <div class="m-cat-tags"><i>schemas</i><i>owners</i><i>lineage</i></div>
+          </div>
+          <div class="m-rail">
+            <span>Airflow orchestration</span><span>Quality checks at every hop</span><span>Prometheus and Grafana</span>
+          </div>
+        </div>
+
+        <div class="m-link"><span class="pkt" style="animation-delay:1.8s"></span></div>
+
+        <div class="m-people">
+          <div class="m-cap">Served through</div>
+          <div class="m-serve">
+            <span class="m-chip">Trino <i>SQL</i></span>
+            <span class="m-chip">Apache Superset <i>dashboards</i></span>
+            <span class="m-chip">Data Science <i>ML models</i></span>
+          </div>
+          <div class="m-cap m-cap-2">Who it serves</div>
+          <div class="m-person"><span class="m-mono">PM</span><div><b>Product Managers</b><i>Feature adoption, funnels, usage</i></div></div>
+          <div class="m-person"><span class="m-mono">PgM</span><div><b>Program Managers</b><i>Delivery health across teams</i></div></div>
+          <div class="m-person"><span class="m-mono">CSM</span><div><b>Customer Success</b><i>Account health, renewal risk</i></div></div>
+          <div class="m-person"><span class="m-mono">LDR</span><div><b>Leaders</b><i>Technical and business KPIs, spend</i></div></div>
+        </div>
+        <div class="m-back" aria-hidden="true"><span>questions, definitions, SLAs</span></div>
+      </div>
+
+      <figcaption class="m-loop">
+        <div class="m-loop-body">
+          <b>And back the other way.</b> Before a table is built I start from the question each of them is asking,
+          then we agree on the pieces that make the answer trustworthy:
+          <span class="m-steps"><span>the question</span><span>metric definition</span><span>grain</span><span>freshness SLA</span><span>a dashboard they own</span></span>
+        </div>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
