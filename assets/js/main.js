@@ -45,7 +45,7 @@
   function renderContrib() {
     const host = $('#contrib'); if (!host || !window.CONTRIB) return;
     host.innerHTML = window.CONTRIB.map((c, i) => `
-      <article class="card rv rv-d${i + 1}">
+      <article class="card proj rv rv-d${i + 1}">
         <div class="proj-top">
           <span class="proj-cat">${esc(c.proj)}</span>
           <span class="proj-yr" style="color:${c.status === 'merged' ? 'var(--green)' : 'var(--amber)'}">

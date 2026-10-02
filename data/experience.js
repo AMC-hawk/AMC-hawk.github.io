@@ -22,6 +22,10 @@ window.TIMELINE = [
 ];
 
 window.CONTRIB = [
+  { proj:"Apache Spark", pr:"#59212", status:"open",
+    title:"[SPARK-59910][PYTHON] Make VariantVal.toJson match the JVM to_json output",
+    blurb:"PySpark's <code>VariantVal.toJson()</code> had drifted from the JVM's <code>to_json</code>, and wrote NaN and infinity as invalid JSON. Aligns floats, decimals, timestamps and offsets with the JVM, with tests.",
+    url:"https://github.com/apache/spark/pull/59212" },
   { proj:"Apache Spark", pr:"#58760", status:"open",
     title:"[SPARK-59146][SQL] Retain qualified access to source columns affected by pipe SET",
     blurb:"Spark SQL analyzer behaviour for pipe <code>SET</code> column resolution, with planner changes plus SQL test coverage.",
