@@ -362,28 +362,31 @@ h2.sec-title{
 .star ~ .proj-top .proj-yr{margin-right:15px}
 
 /* ---------- Book ---------- */
-#book{padding-block:clamp(40px,6vw,72px)}
+#book{padding-block:clamp(36px,5vw,64px)}
+#book .sec-num{margin-bottom:16px}
 .book-card{
-  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:clamp(18px,3vw,32px);
-  color:inherit;max-width:900px;
+  display:grid;grid-template-columns:auto 1fr auto;align-items:center;column-gap:14px;
+  grid-template-areas:"icon title go" "desc desc desc" "tags tags tags";
+  color:inherit;
 }
 .book-icon{
-  display:grid;place-items:center;width:64px;height:64px;border-radius:var(--r-lg);
+  grid-area:icon;display:grid;place-items:center;width:40px;height:40px;border-radius:var(--r);
   background:var(--accent-soft);color:var(--accent);
 }
-.book-icon svg{width:30px;height:30px}
-.book-body h3{font-family:var(--font-d);font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.25}
-.book-body p{color:var(--ink-muted);font-size:15px;margin:9px 0 0;max-width:62ch}
+.book-icon svg{width:20px;height:20px}
+.book-card h3{grid-area:title;font-family:var(--font-d);font-size:19px;font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.25}
+.book-card p{grid-area:desc;color:var(--ink-muted);font-size:15px;margin:14px 0 0;max-width:78ch}
+.book-card .stack{grid-area:tags}
 .book-go{
-  display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
-  font-size:14.5px;font-weight:500;color:var(--accent);transition:gap .22s var(--ease);
+  grid-area:go;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+  font-size:14px;font-weight:500;color:var(--accent);transition:gap .22s var(--ease);
 }
-.book-go span{display:flex;width:15px;height:15px}
-.book-go svg{width:15px;height:15px}
+.book-go span{display:flex;width:14px;height:14px}
+.book-go svg{width:14px;height:14px}
 .book-card:hover .book-go{gap:10px}
-@media (max-width:760px){
-  .book-card{grid-template-columns:1fr;align-items:start}
-  .book-icon{width:52px;height:52px}
+@media (max-width:600px){
+  .book-card{grid-template-columns:auto 1fr;grid-template-areas:"icon title" "desc desc" "tags tags" "go go"}
+  .book-go{margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
 }
 
 /* ---------- Timeline ---------- */
