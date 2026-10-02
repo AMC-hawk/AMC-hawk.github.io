@@ -80,7 +80,7 @@
         <div class="proj-links">
           ${p.url
             ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${ICON.gh} Source ${ICON.arrow}</a>`
-            : `<span style="font-family:var(--font-m);font-size:11.5px;color:var(--ink-subtle)">Private build · detailed in résumé</span>`}
+            : p.alt ? '' : `<span style="font-family:var(--font-m);font-size:11.5px;color:var(--ink-subtle)">Private build · detailed in résumé</span>`}
           ${p.alt ? `<a href="${esc(p.alt.url)}" target="_blank" rel="noopener">${ICON.ext} ${esc(p.alt.label)}</a>` : ''}
         </div>
       </article>`).join('');

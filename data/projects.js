@@ -23,6 +23,10 @@ window.PROJECTS = [
     blurb:"A reproducible orchestration stack: Apache Airflow scheduling Spark jobs end to end, containerised and ready to extend.",
     stack:["Python","Airflow","Spark","Docker"], url:GH+"Airflow-Spark-Setup" },
 
+  { name:"Data Engineer Interview Book", cat:"Data Engineering", year:2026, featured:true,
+    blurb:"A study book I wrote for data engineering interviews: SQL (window functions, joins, CTEs, dates), Python, data modelling, ETL and data quality, big data, BigQuery and pipeline design, with practice problems and worked answers. Reading progress syncs to GitHub so it follows me across devices.",
+    stack:["SQL","Python","BigQuery","Data Modeling","ETL"], url:null, alt:{ url:"de-book/", label:"Read the book" } },
+
   { name:"MCP Server, local setup", cat:"ML / AI", year:2025, featured:true,
     blurb:"A local Model Context Protocol server: standing up tool-calling infrastructure so LLMs can reach real systems.",
     stack:["Python","MCP","LLM"], url:GH+"MCP_Server_LocalSetup" },
